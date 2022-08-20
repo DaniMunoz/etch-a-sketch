@@ -19,16 +19,12 @@
           item.style.gridRow = i + "/" + i;
           item.style.gridColumn = j + "/" + j;
           item.addEventListener("mouseover", function (e) {
-            console.log(e);
+            //console.log(e);
             item.style.backgroundColor = "black";
           });
           container.appendChild(item);
         }
       }
-    }
-
-    function changeColor(e) {
-      console.log(e.target);
     }
 
     init(16, 16, 50);
