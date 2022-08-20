@@ -1,0 +1,36 @@
+<html>
+  <head></head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    function init(rows, columns, sizePx) {
+      let container = document.getElementById("container");
+      container.style.display = "grid";
+      container.style.gridTemplateRows =
+        "repeat(" + rows + ", " + sizePx + "px)";
+      container.style.gridTemplateColumns =
+        "repeat(" + columns + ", " + sizePx + "px)";
+      
+      for (i = 1; i <= rows; i++) {
+        for (j = 1; j <= columns; j++) {
+          let item = document.createElement("div");
+          item.style.backgroundColor = "lightgrey";
+          item.style.gridRow = i + "/" + i;
+          item.style.gridColumn = j + "/" + j;
+          item.addEventListener("mouseover", function (e) {
+            console.log(e);
+            item.style.backgroundColor = "black";
+          });
+          container.appendChild(item);
+        }
+      }
+    }
+
+    function changeColor(e) {
+      console.log(e.target);
+    }
+
+    init(16, 16, 50);
+  </script>
+</html>
